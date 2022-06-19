@@ -32,17 +32,17 @@ Right-clicking on a crossed-out element again causes it to go back as non-crosse
 I used Redux for the operation of the application. In ReduxDevTools, you can follow the flow of data and states in Redux. Some API requests have delays. 
 An visual effect was added intentionally for the user for the duration of the query.
 
-GET product list download address: http://localhost:9000/products
-After pressing the "Load" button, it downloads a list of products from api / products, saves it in the store and displays it on the screen in the left column.
-Clicking on the button triggers an API query, the results returned from the query are saved in redux, and then displayed in the productsList component.
+    GET product list download address: http://localhost:9000/products
+    After pressing the "Load" button, it downloads a list of products from api / products, saves it in the store and displays it on the screen in the left column.
+    Clicking on the button triggers an API query, the results returned from the query are saved in redux, and then displayed in the productsList component.
 
-API address shopping list download: GET http://localhost:9000/products/shopingList
-Adding a product to the shopping list: POST http://localhost:9000/products/shopingList/new
-The entire product (object) is sent as the request body.
-Deleting an item from the shopping list: DEL http://localhost:9000/products/shopingList/:id
-Left-clicking on a product from the left column adds it to the shopping list (right column)
-Left clicking in the right column removes the product from the shopping list.
-The displayed data in the shopingList column is always taken from the API.
+    API address shopping list download: GET http://localhost:9000/products/shopingList
+    Adding a product to the shopping list: POST http://localhost:9000/products/shopingList/new
+    The entire product (object) is sent as the request body.
+    Deleting an item from the shopping list: DEL http://localhost:9000/products/shopingList/:id
+    Left-clicking on a product from the left column adds it to the shopping list (right column)
+    Left clicking in the right column removes the product from the shopping list.
+    The displayed data in the shopingList column is always taken from the API.
 
 * Filters
 The form items in the "Filters" section filter products. Contrary to version 1, filtering is done with Redux.
