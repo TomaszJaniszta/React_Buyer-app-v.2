@@ -60,3 +60,15 @@ Pressing the "d" button on the keyboard takes the user to the page with the deta
 On the details page, pressing 'backspace' takes the user back to the home page. Enter adds a product to the list.
 
 * The application will soon have E2E tests written in the folder: cypress / integration /
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Clone/copy project**
+
+**npm init -y**
+
+**npm install**
+
+**npm start**
+
+http://localhost:3000
