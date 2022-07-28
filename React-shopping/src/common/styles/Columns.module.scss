@@ -1,9 +1,42 @@
 $color-red: red;
 
 .App {
+  border: 3px double rgb(97, 97, 97);
   text-align: center;
-  display: flex;
+  // display: flex;
   width: 50vw;
+  & .title {
+    // margin-left: 40%;
+    // margin-top: 1%;
+    justify-content: center;
+    align-items: center;
+    // position: relative;
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(
+      rgb(223, 223, 223),
+      rgb(255, 255, 255),
+      rgb(223, 223, 223)
+    );
+  }
+  & .list {
+    display: flex;
+    justify-content: center;
+    color: rgb(44, 0, 120);
+  }
+  // & .list2 {
+  //   display: flex;
+  //   justify-content: center;
+  //   color: rgb(44, 0, 120);
+  // }
+  & .decimal {
+    text-align: left;
+    list-style-type: decimal;
+    // border: 1px solid rgb(97, 97, 97);
+  }
+  & .roman {
+    text-align: left;
+    list-style-type: upper-roman;
+  }
 }
 
 .AppLogo {
@@ -11,11 +44,11 @@ $color-red: red;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .AppLogo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+// @media (prefers-reduced-motion: no-preference) {
+//   .AppLogo {
+//     animation: App-logo-spin infinite 20s linear;
+//   }
+// }
 
 .AppHeader {
   background-color: #282c34;
@@ -29,11 +62,11 @@ $color-red: red;
   width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

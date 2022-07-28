@@ -1,7 +1,14 @@
 .Wrapper {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  // height: 100px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  & .inputs {
+    // display: flex;
+    // justify-content: center;
+    margin-left: 20px;
+  }
 }

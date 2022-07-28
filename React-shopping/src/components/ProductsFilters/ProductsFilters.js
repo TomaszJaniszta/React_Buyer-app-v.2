@@ -10,45 +10,53 @@ function ProductsFilters({ productsList, filterProducts }) {
 
   useEffect(() => {
     filterUniqueCategory();
-  }, [productsList])
+  }, [productsList]);
 
   const filterUniqueCategory = () => {
-    const categoryList = productsList.map((product) => product.kategoria)
+    const categoryList = productsList.map((product) => product.kategoria);
     setUniqueCategories([...new Set(categoryList)]);
   };
 
   const onChangeSearchValue = (event) => {
-    setSearchValue(event.target.value)
-    filterProducts(event.target.value, selectedCategory, isFoodCategory) // do auto filtrów
+    setSearchValue(event.target.value);
+    filterProducts(event.target.value, selectedCategory, isFoodCategory); // do auto filtrów
   };
 
   const onSelectCategory = (event) => {
     setSelectedCategory(event.target.value);
-    filterProducts(searchValue, event.target.value, isFoodCategory) // do auto filtrów
-  }
+    filterProducts(searchValue, event.target.value, isFoodCategory); // do auto filtrów
+  };
 
   const onChangeIsFoodCategory = () => {
     setIsFoodCategory(!isFoodCategory);
-    filterProducts(searchValue, selectedCategory, !isFoodCategory) // do auto filtrów
-  }
+    filterProducts(searchValue, selectedCategory, !isFoodCategory); // do auto filtrów
+  };
 
   return (
     <div className={styles.Wrapper}>
-
-      Wpisz nazwę lub część nazwy by wyszukać produkty:
-      <input value={searchValue} onChange={onChangeSearchValue}></input>
-
-      Wybierz kategorię do znalezienia:
-      <select onChange={onSelectCategory}>
-        <option key={'default'} value={''}></option>
-        {uniqueCategories.map((category) =>
-          <option key={category} value={category}>{category}</option>
-        )}
-      </select>
-
-      Produkty spozywcze:
-      <input type="checkbox" value={isFoodCategory} onChange={onChangeIsFoodCategory} />
-
+      <label>
+        {'Wpisz nazwę lub część nazwy by wyszukać produkty: '}
+        <input value={searchValue} onChange={onChangeSearchValue} />
+      </label>
+      <label className={styles.inputs}>
+        {'Wybierz kategorię do znalezienia: '}
+        <select onChange={onSelectCategory}>
+          <option key={'default'} value={''}></option>
+          {uniqueCategories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label className={styles.inputs}>
+        {'Produkty spozywcze: '}
+        <input
+          type="checkbox"
+          value={isFoodCategory}
+          onChange={onChangeIsFoodCategory}
+        />
+      </label>
       {/* <button onClick={() => filterProducts(searchValue, selectedCategory, isFoodCategory)}>Wyszukaj</button> */}
     </div>
   );
