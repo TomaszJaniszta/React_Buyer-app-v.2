@@ -1,6 +1,6 @@
 Projects created for testing various functionalities and a different structure of a React application.
 
-# React - React-shopping
+# React_Buyer-app-v.1
 
 The application contains a defined list of products in the src / common / consts / products.js file.
 The left column (of available products) displays a list of products from the products.js file as an unnumbered list (we only display the name).
@@ -23,10 +23,21 @@ The newly added products are fully interactive, i.e. work in line with the previ
 Right-clicking on an item from the shopping list causes it to be crossed out. 
 Right-clicking on a crossed-out element again causes it to go back as non-crossed.
 
-# React - second version - React-shopping2
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Online simulation server launch: npm run devStart
-- Main application launch: npm run start
+**Clone/copy project**
+
+**npm init -y**
+
+**npm install**
+
+**npm start**
+
+http://localhost:3000
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+# React_Buyer-app-v.2
 
 * API
 I used Redux for the operation of the application. In ReduxDevTools, you can follow the flow of data and states in Redux. Some API requests have delays. 
@@ -69,6 +80,8 @@ On the details page, pressing 'backspace' takes the user back to the home page. 
 
 **npm install**
 
-**npm start**
+- Online simulation server launch: npm run devStart
+
+- Main application launch: npm run start
 
 http://localhost:3000
