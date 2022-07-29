@@ -33,31 +33,33 @@ function ProductsFilters({ productsList, filterProducts }) {
   };
 
   return (
-    <div className={styles.Wrapper}>
-      <label>
-        {'Wpisz nazwę lub część nazwy by wyszukać produkty: '}
-        <input value={searchValue} onChange={onChangeSearchValue} />
-      </label>
-      <label className={styles.inputs}>
-        {'Wybierz kategorię do znalezienia: '}
-        <select onChange={onSelectCategory}>
-          <option key={'default'} value={''}></option>
-          {uniqueCategories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className={styles.inputs}>
-        {'Produkty spozywcze: '}
-        <input
-          type="checkbox"
-          value={isFoodCategory}
-          onChange={onChangeIsFoodCategory}
-        />
-      </label>
-      {/* <button onClick={() => filterProducts(searchValue, selectedCategory, isFoodCategory)}>Wyszukaj</button> */}
+    <div align="center">
+      <div className={styles.FilterProducts}>
+        <label>
+          {'Wpisz nazwę lub część nazwy by wyszukać produkty: '}
+          <input value={searchValue} onChange={onChangeSearchValue} />
+        </label>
+        <label className={styles.inputs}>
+          {'Wybierz kategorię do znalezienia: '}
+          <select onChange={onSelectCategory}>
+            <option key={'default'} value={''}></option>
+            {uniqueCategories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className={styles.inputs}>
+          {'Produkty spozywcze: '}
+          <input
+            type="checkbox"
+            value={isFoodCategory}
+            onChange={onChangeIsFoodCategory}
+          />
+        </label>
+        {/* <button onClick={() => filterProducts(searchValue, selectedCategory, isFoodCategory)}>Wyszukaj</button> */}
+      </div>
     </div>
   );
 }

@@ -16,42 +16,44 @@ function AddProduct({ addProduct }) {
   };
 
   return (
-    <div className={styles.Wrapper}>
-      <label>
-        {'Nazwa: '}
-        <input
-          className={styles.input}
-          type="text"
-          name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </label>
-      <label className={styles.inputs}>
-        {'Kategoria: '}
-        <input
-          type="text"
-          name="category"
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
-        />
-      </label>
-      <label className={styles.inputs}>
-        {'Produkt spożywczy: '}
-        <input
-          type="checkbox"
-          checked={isFood}
-          onChange={() => setIsFood(!isFood)}
-        />
-      </label>
+    <div align="center">
+      <div className={styles.AddProducts}>
+        <label>
+          {'Nazwa: '}
+          <input
+            className={styles.input}
+            type="text"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </label>
+        <label className={styles.inputs}>
+          {'Kategoria: '}
+          <input
+            type="text"
+            name="category"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          />
+        </label>
+        <label className={styles.inputs}>
+          {'Produkt spożywczy: '}
+          <input
+            type="checkbox"
+            checked={isFood}
+            onChange={() => setIsFood(!isFood)}
+          />
+        </label>
 
-      <button
-        className={styles.inputs}
-        disabled={btnDisabled}
-        onClick={onAddProduct}
-      >
-        Dodaj produkt
-      </button>
+        <button
+          className={styles.inputs}
+          disabled={btnDisabled}
+          onClick={onAddProduct}
+        >
+          Dodaj produkt
+        </button>
+      </div>
     </div>
   );
 }

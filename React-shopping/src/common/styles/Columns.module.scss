@@ -3,14 +3,14 @@ $color-red: red;
 .App {
   border: 3px double rgb(97, 97, 97);
   text-align: center;
-  // display: flex;
   width: 50vw;
+  background-image: linear-gradient(
+    rgb(255, 255, 255) 20%,
+    rgb(208, 231, 240)
+  );
   & .title {
-    // margin-left: 40%;
-    // margin-top: 1%;
     justify-content: center;
     align-items: center;
-    // position: relative;
     color: rgb(0, 0, 0);
     background-image: linear-gradient(
       rgb(223, 223, 223),
@@ -18,24 +18,37 @@ $color-red: red;
       rgb(223, 223, 223)
     );
   }
-  & .list {
-    display: flex;
-    justify-content: center;
-    color: rgb(44, 0, 120);
-  }
-  // & .list2 {
-  //   display: flex;
-  //   justify-content: center;
-  //   color: rgb(44, 0, 120);
-  // }
-  & .decimal {
-    text-align: left;
+  & .productList {
+    text-align: center;
     list-style-type: decimal;
-    // border: 1px solid rgb(97, 97, 97);
+    background-image: linear-gradient(
+      rgb(234, 234, 234),
+      rgb(255, 255, 255),
+      rgb(174, 174, 174)
+    );
+    justify-content: center;
+    align-items: center;
+    color: auto;
+    margin-left: 30%;
+    margin-top: 4px;
+    margin-right: 30%;
+    border: 1px solid rgb(97, 97, 97);
   }
-  & .roman {
-    text-align: left;
+  & .shoppingList {
+    text-align: center;
     list-style-type: upper-roman;
+    background-image: linear-gradient(
+      rgb(170, 213, 255),
+      rgb(255, 255, 255),
+      rgb(170, 213, 255)
+    );
+    justify-content: center;
+    align-items: center;
+    color: auto;
+    margin-left: 30%;
+    margin-top: 4px;
+    margin-right: 30%;
+    border: 1px solid rgb(97, 97, 97);
   }
 }
 

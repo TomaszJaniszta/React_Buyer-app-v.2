@@ -12,12 +12,12 @@ class ProductsList extends React.Component {
             <i>Twoja lista produktów:</i>
           </b>
         </div>
-        <div className={commonColumnsStyles.list}>
+        <div>
           <ul>
             <i>
               {filteredProducts.map((product) => (
                 <li
-                  className={commonColumnsStyles.decimal}
+                className={commonColumnsStyles.productList}
                   key={Math.random()}
                   onClick={() => addToShoppingList(product.nazwa)}
                 >

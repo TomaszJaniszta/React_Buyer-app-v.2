@@ -81,6 +81,9 @@ function App() {
         spożywczy / nie spożywczy). Pole filtrów umożliwia filtrowanie produktów
         z menu także po wymienionych polach.
       </p>
+      <p className={styles.description}>
+        Z menu po lewej prawym przyciskiem myszy dodajemy produkty do "Twojej listy zakupów". Na liście zakupów prawym przyciskiem myszy usuwamy dodany produkt, lub lewym przekreślamy go. Ponowne kliknięcie lewym przyciskiem likwiduje przekreślenie.
+      </p>
       <AddProduct addProduct={addProduct} />
       <ProductFilters
         productsList={productsList}

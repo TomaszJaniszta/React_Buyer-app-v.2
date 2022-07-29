@@ -19,7 +19,7 @@ function ShopingList({ shoppingList, removeFromShoppingList, onToggleBought }) {
           <i>
             {shoppingList.map((product) => (
               <li
-                className={commonColumnsStyles.roman}
+                className={commonColumnsStyles.shoppingList}
                 key={product.id}
                 onContextMenu={() => onToggleBought(product.id)}
                 onClick={() => removeFromShoppingList(product)}
