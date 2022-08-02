@@ -39,8 +39,9 @@ function ProductsFilters() {
 
     return (
         <div className={styles.filtersHeaderWrapper} align="center">
-            <Typography variant="h4"> Filter products: </Typography>
+            <Typography variant="h4"><i> Filter products: </i></Typography>
             <FormGroup>
+
                 <div className={styles.filtersForm}>
                     <FormControlLabel
                         control={
@@ -57,7 +58,7 @@ function ProductsFilters() {
                 </div>
             </FormGroup >
 
-            <Typography variant="h4"> Only food: </Typography>
+            <Typography variant="h4"><i> Only food: </i></Typography>
             <FormGroup>
                 <div className={styles.filtersForm}>
                     <FormControlLabel

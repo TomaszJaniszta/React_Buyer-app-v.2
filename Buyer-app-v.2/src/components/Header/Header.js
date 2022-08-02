@@ -39,7 +39,7 @@ function Header(props) {
         <div className={styles.headerWrapper}>
             <div className={styles.signedUserInfo}>
                 <Typography sx={{ m: 2 }} variant="h5">
-                    Logged:{" "}
+                    <i>Logged:{" "}</i>
                     {`${currentUser.userfirstName} ${currentUser.userLastName}`}
                 </Typography>
                 <Button variant="contained" onClick={setInitialValues} >Load products</Button>

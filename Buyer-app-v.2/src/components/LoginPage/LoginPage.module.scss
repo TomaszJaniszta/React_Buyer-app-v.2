@@ -1,4 +1,36 @@
+:root {
+  --gray: #bdbcbc;
+}
+
 .loginPageWrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  margin-top: 15%;
+  background-image: radial-gradient(rgb(170, 213, 255),
+      rgb(255, 255, 255),
+      rgb(170, 213, 255));
+  border-radius: 5%;
+  box-shadow: 10px 10px 10px 0px var(--gray);
+
+  & input[type='text'],
+  textarea {
+    background-color: #ffffff;
+    box-shadow: 10px 10px 10px 0px var(--gray);
+  }
+
+  & label {
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: var(--gray);
+  }
+
+  & button {
+    box-shadow: 5px 5px 5px 0px var(--gray);
+  }
 }

@@ -20,10 +20,11 @@ function LoginPage() {
     navigate("/products/dashboard");
   };
   return (
-    <div>
-      <form className={styles.loginPageWrapper} onSubmit={signInUser}>
-        <Box sx={{ m: 2 }}>
+    <div className={styles.loginPageWrapper}>
+      <form onSubmit={signInUser}>
+        <Box sx={{ m: 1 }}>
           <TextField
+            className={styles.inputs}
             margin="dense"
             id="outlined-basic"
             label="First name"
@@ -32,7 +33,7 @@ function LoginPage() {
             onChange={(event) => setUserFirstName(event.target.value)}
           />
         </Box>
-        <Box sx={{ m: 2 }}>
+        <Box sx={{ m: 1 }}>
           <TextField
             margin="dense"
             id="outlined-basic"
@@ -42,15 +43,17 @@ function LoginPage() {
             onChange={(event) => setUserLastName(event.target.value)}
           />
         </Box>
-        <Box sx={{ m: 2 }}>
-          <Button
-            disabled={!userfirstName || !userLastName}
-            variant="contained"
-            type="submit"
-          >
-            Log in
-          </Button>
-        </Box>
+        <div align="center">
+          <Box sx={{ m: 1 }}>
+            <Button
+              disabled={!userfirstName || !userLastName}
+              variant="contained"
+              type="submit"
+            >
+              Log in
+            </Button>
+          </Box>
+        </div>
       </form>
     </div>
   );
