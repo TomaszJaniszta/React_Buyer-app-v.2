@@ -39,32 +39,34 @@ function ProductsFilters() {
 
     return (
         <div className={styles.filtersHeaderWrapper}>
-            <h4><i> Filter products: </i></h4>
-            {/* <Typography variant="h6"></Typography> */}
-            <FormGroup>
-                <FormControlLabel
-                    control={
-                        <TextField
-                            id="textInput"
-                            margin="dense"
-                            label="product name"
-                            variant="outlined"
-                            value={searchValue}
-                            onChange={onChangeSearchValue}
-                        />
-                    }
-                />
-            </FormGroup >
-            <h4><i> Only food: </i></h4>
-            {/* <Typography variant="h6"></Typography> */}
-            <FormGroup>
-                <FormControlLabel
-                    control={<Checkbox
-                        value={isFoodCategory}
-                        onChange={onChangeIsFoodCategory}
-                    />}
-                />
-            </FormGroup >
+            <div className={styles.filtersForm}>
+                <h4><i> Filter products: </i></h4>
+                {/* <Typography variant="h6"></Typography> */}
+                <FormGroup>
+                    <FormControlLabel
+                        control={
+                            <TextField
+                                id="textInput"
+                                margin="dense"
+                                label="product name"
+                                variant="outlined"
+                                value={searchValue}
+                                onChange={onChangeSearchValue}
+                            />
+                        }
+                    />
+                </FormGroup >
+                <h4><i> Only food: </i></h4>
+                {/* <Typography variant="h6"></Typography> */}
+                <FormGroup>
+                    <FormControlLabel
+                        control={<Checkbox
+                            value={isFoodCategory}
+                            onChange={onChangeIsFoodCategory}
+                        />}
+                    />
+                </FormGroup >
+            </div>
         </div >
     );
 }
