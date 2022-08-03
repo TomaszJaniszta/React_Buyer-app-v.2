@@ -36,16 +36,19 @@ function Header(props) {
     };
 
     return (
-        <div className={styles.headerWrapper}>
-            <div className={styles.signedUserInfo}>
-                <Typography sx={{ m: 2 }} variant="h5">
-                    <i>Logged:{" "}</i>
-                    {`${currentUser.userfirstName} ${currentUser.userLastName}`}
-                </Typography>
-                <Button variant="contained" onClick={setInitialValues} >Load products</Button>
-                <Link to="/">
-                    <Button variant="contained" color="error"> Log off </Button>
-                </Link>
+        <div>
+            <div className={styles.headerWrapper}>
+                <div className={styles.signedUserInfo}>
+                    <h4>Logged:</h4>
+                    <Typography sx={{ m: 1 }} variant="h6" color="blue" font>
+                        {` ${currentUser.userfirstName} ${currentUser.userLastName}`}
+                    </Typography>
+
+                    <Button variant="contained" onClick={setInitialValues} >Load products</Button>
+                    <Link to="/">
+                        <Button variant="contained" color="error"> Log off </Button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

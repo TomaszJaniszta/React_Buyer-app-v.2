@@ -3,51 +3,62 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-
+  // justify-content: flex-end;
+  justify-content: center;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(170, 213, 255));
+  margin-right: 20px;
 
   & button {
     box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+    border-radius: 10px;
   }
 
 }
 
+h4 {
+  margin-right: 15px;
+}
+
 .filtersHeaderWrapper {
   display: flex;
-  // margin-left: 5%;
-  // margin-right: 5%;
-  height: 100px;
+  flex-direction: row;
+  // display: inline-block; // margin-left: auto;
+  // position: relative;
+
+  // margin-right: auto;
+
+  // display: flex;
+  // flex-direction: row;
+  // padding: 100 px;
+  margin-left: 15%;
+  margin-right: 15%;
+  // height: 100px;
   width: 100%;
-  text-align: center;
+  // text-align: center;
   align-items: center;
   // justify-content: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   background-image: linear-gradient(rgb(170, 213, 255), rgb(255, 255, 255));
+  // border-radius: 10px;
 
   & input[type='text'],
   textarea {
     background-color: #ffffff;
     box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
-  }
-
-  & input[type="checkbox"],
-  :checked {
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+    height: 10 px;
+    // border-radius: 5 px;
   }
 }
 
-.filtersForm {
+// .filtersForm {
+//   display: flex;
+//   flex-direction: row;
+//   margin-left: 10%;
 
-  display: flex;
-  flex-direction: row;
-  margin-left: 10%;
-
-  &>* {
-    margin-left: 16px;
-  }
-}
+//   &>* {
+//     margin-left: 16px;
+//   }
+// }
 
 .signedUserInfo {
   display: flex;

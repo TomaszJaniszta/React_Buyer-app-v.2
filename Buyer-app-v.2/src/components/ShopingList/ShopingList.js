@@ -49,23 +49,28 @@ function ShopingList(props) {
 
     return (
         <div className={commonColumnsStyles.App}>
-            <header className={commonColumnsStyles.ShoppingList}>
-                <p>Shoping List</p>
+            <h4>Shoping List</h4>
+            <p>Right click on item to remove.<br /> Left click to go to the item details.</p>
+            <div className={commonColumnsStyles.ShoppingList}>
                 <Stack spacing={2}>
+
                     {statusShopingList === "loading" ? (
                         <CircularProgress />
-                    ) : (products?.map((product) => (
-                        // <Link key={product.id} to={`/product/productdetails/${product.id}`}>
-                        <Paper
-                            className={commonColumnsStyles.Products}
-                            key={_.uniqueId()}
-                            onClick={() => removeFromShopingList(product.id2)}
-                            onContextMenu={(event) => productDetails(product.id, event)} >
-                            {`${product.id}. ${product.name}`}</Paper>
-                        // </Link>
-                    )))}
+                    ) : (
+                        <p>tekst</p>,
+                        products?.map((product, id) => (
+                            // <Link key={product.id} to={`/product/productdetails/${product.id}`}>
+                            <Paper
+                                className={commonColumnsStyles.Products}
+                                key={_.uniqueId()}
+                                onClick={() => removeFromShopingList(product.id2)}
+                                onContextMenu={(event) => productDetails(product.id, event)} >
+                                {`${id + 1}. ${product.name}`}
+                            </Paper>
+                            // </Link>
+                        )))}
                 </Stack>
-            </header>
+            </div>
         </div >
     );
 }

@@ -3,57 +3,62 @@ $color-red: red;
 .App {
   text-align: center;
   display: flex;
+  flex-direction: column;
   width: 100vw;
   background: rgb(255, 255, 255);
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-
-.AppLogo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  color: grey;
+  margin-left: 5%;
 }
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .AppLogo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
+ul {
+  list-style-type: decimal;
+  margin: 0;
+  padding: 0;
+}
+
 
 .ProductList {
-  margin-left: 10px;
-  margin-right: 5px;
+  margin-left: 5%;
   margin-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: rgb(1, 21, 112);
-  width: 100%;
-  border: 7px solid rgb(60, 79, 255);
-  background-image: repeating-radial-gradient(rgb(142, 247, 255), rgb(255, 255, 255) 10%, rgb(142, 247, 255));
-  border-style: ridge;
+  width: 90%;
+  border: 0px solid rgb(60, 79, 255);
+  background-image: repeating-radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255) 10%, rgb(142, 247, 255));
   padding: 30px;
-  list-style-type: decimal
+  // list-style-type: decimal;
+  // box-shadow: 5px 5px 20px 0px rgb(114, 114, 114);
+  box-shadow: 0 0 15px 5px rgb(255, 255, 255) inset;
+  border-radius: 15px;
 }
 
 .ShoppingList {
-  margin-left: 5px;
-  margin-right: 10px;
+  margin-right: 5%;
   margin-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: rgb(1, 43, 5);
-  width: 100%;
-  border: 7px solid rgb(25, 104, 15);
-  background-image: repeating-radial-gradient(rgb(154, 253, 171), rgb(255, 255, 255) 10%, rgb(154, 253, 171));
-  border-style: ridge;
+  width: 90%;
+  border: 0px solid rgb(25, 104, 15);
+  background-image: repeating-radial-gradient(rgb(255, 255, 255), rgb(255, 255, 255) 10%, rgb(154, 253, 171));
   padding: 30px;
+  // list-style-type: upper-roman;
+  box-shadow: 0 0 15px 5px rgb(255, 255, 255) inset;
+  border-radius: 15px;
 }
 
 .Products {
-  font-size: calc(5px + 2vmin);
+  font-size: calc(5px + 1vmin);
   margin-bottom: 5px;
   width: auto;
   padding: 10px;
@@ -61,12 +66,13 @@ $color-red: red;
   color: rgb(0, 0, 0);
   border: 1px solid black;
   background: rgb(255, 138, 83);
+  box-shadow: 5px 5px 20px 0px rgb(114, 114, 114);
 }
 
 .Products:focus {
   color: rgb(0, 0, 0);
   border: 1px solid black;
-  background: rgb(255, 187, 0);
+  background: rgb(106, 213, 255);
   transition: linear 1s;
   transform: scaleY(1.2);
   transform: scaleX(1.2);
@@ -76,12 +82,21 @@ $color-red: red;
 .Products:hover {
   color: rgb(53, 53, 53);
   border: 1px solid black;
-  background: rgb(255, 238, 2);
+  background: rgb(106, 213, 255);
   transition-timing-function: ease-in;
   transition: linear 1s;
-  transform: scaleY(1.1);
-  transform: scaleX(1.1);
+  transform: scaleY(1.2);
+  transform: scaleX(1.2);
   box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.Products:active {
+  // transition: linear 2s;
+  transform: scaleY(-1.5);
+  transform: scaleX(-1.5);
+  // transform: translateY(20px);
 }
 
 // @keyframes App-logo-spin {

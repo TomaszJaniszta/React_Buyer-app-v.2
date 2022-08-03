@@ -63,8 +63,9 @@ function ProductsList() {
 
   return (
     <div className={commonColumnsStyles.App} >
-      <header className={commonColumnsStyles.ProductList}>
-        <p>Products list</p>
+      <h4>Products list</h4>
+      <p>Right click on item to add to shopping list.<br />  If focused you can move arrow up/down to change item and enter to do the same.</p>
+      <div className={commonColumnsStyles.ProductList}>
         <Stack spacing={2} >
           {products?.map((product) => (
             <>
@@ -85,7 +86,7 @@ function ProductsList() {
             </>
           ))}
         </Stack>
-      </header>
+      </div>
     </div>
   );
 }
