@@ -49,7 +49,7 @@ function ShopingList(props) {
 
     return (
         <div className={commonColumnsStyles.App}>
-            <header className={commonColumnsStyles.AppHeader}>
+            <header className={commonColumnsStyles.ShoppingList}>
                 <p>Shoping List</p>
                 <Stack spacing={2}>
                     {statusShopingList === "loading" ? (
@@ -57,6 +57,7 @@ function ShopingList(props) {
                     ) : (products?.map((product) => (
                         // <Link key={product.id} to={`/product/productdetails/${product.id}`}>
                         <Paper
+                            className={commonColumnsStyles.Products}
                             key={_.uniqueId()}
                             onClick={() => removeFromShopingList(product.id2)}
                             onContextMenu={(event) => productDetails(product.id, event)} >

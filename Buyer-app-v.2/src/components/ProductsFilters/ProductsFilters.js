@@ -39,10 +39,9 @@ function ProductsFilters() {
 
     return (
         <div className={styles.filtersHeaderWrapper} align="center">
-            <Typography variant="h4"><i> Filter products: </i></Typography>
-            <FormGroup>
-
-                <div className={styles.filtersForm}>
+            <div className={styles.filtersForm}>
+                <Typography variant="h4"><i> Filter products: </i></Typography>
+                <FormGroup>
                     <FormControlLabel
                         control={
                             <TextField
@@ -55,20 +54,19 @@ function ProductsFilters() {
                             />
                         }
                     />
-                </div>
-            </FormGroup >
-
+                </FormGroup >
+            </div>
             <Typography variant="h4"><i> Only food: </i></Typography>
-            <FormGroup>
-                <div className={styles.filtersForm}>
+            <div className={styles.filtersForm}>
+                <FormGroup>
                     <FormControlLabel
                         control={<Checkbox
                             value={isFoodCategory}
                             onChange={onChangeIsFoodCategory}
                         />}
                     />
-                </div>
-            </FormGroup >
+                </FormGroup >
+            </div>
         </div >
     );
 }

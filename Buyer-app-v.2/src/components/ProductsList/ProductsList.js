@@ -63,7 +63,7 @@ function ProductsList() {
 
   return (
     <div className={commonColumnsStyles.App} >
-      <header className={commonColumnsStyles.AppHeader}>
+      <header className={commonColumnsStyles.ProductList}>
         <p>Products list</p>
         <Stack spacing={2} >
           {products?.map((product) => (
