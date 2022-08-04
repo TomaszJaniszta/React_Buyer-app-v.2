@@ -7,7 +7,7 @@
   justify-content: center;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(170, 213, 255));
   margin-right: 20px;
-  
+
   & button {
     box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
     border-radius: 10px;
@@ -15,28 +15,26 @@
 
 }
 
+.filtersHeaderWrapper1 {
+  display: flex;
+  margin-left: 5vw;
+  margin-right: 10vw;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+h4 {
+  margin-right: 15px;
+}
+
 .filtersHeaderWrapper {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  // height: 100px;
+  height: 5vw;
   width: 100%;
-
-  background-image: linear-gradient(rgb(170, 213, 255), rgb(255, 255, 255));
-
-  & h4 {
-  margin-left: 15px;
-  margin-right: 5px;
-}
- 
-  & input[type='text'],
-  textarea {
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
-    height: 10 px;
-    // border-radius: 5 px;
-  }
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(170, 213, 255));
 }
 
 .signedUserInfo {

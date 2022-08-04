@@ -39,7 +39,8 @@ function ProductsFilters() {
 
     return (
         <div className={styles.filtersHeaderWrapper}>
-                <h4><i> Filter products: </i></h4>
+            <div className={styles.filtersHeaderWrapper1}>
+                <h4>Filter products:</h4>
                 {/* <Typography variant="h6"></Typography> */}
                 <FormGroup>
                     <FormControlLabel
@@ -51,10 +52,13 @@ function ProductsFilters() {
                                 variant="outlined"
                                 value={searchValue}
                                 onChange={onChangeSearchValue}
+                                className={styles.input}
                             />
                         }
                     />
                 </FormGroup >
+
+
                 <h4><i> Only food: </i></h4>
                 {/* <Typography variant="h6"></Typography> */}
                 <FormGroup>
@@ -65,6 +69,7 @@ function ProductsFilters() {
                         />}
                     />
                 </FormGroup >
+            </div>
         </div >
     );
 }
