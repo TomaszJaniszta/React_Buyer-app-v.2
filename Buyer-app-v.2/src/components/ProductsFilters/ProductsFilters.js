@@ -39,7 +39,6 @@ function ProductsFilters() {
 
     return (
         <div className={styles.filtersHeaderWrapper}>
-            <div className={styles.filtersForm}>
                 <h4><i> Filter products: </i></h4>
                 {/* <Typography variant="h6"></Typography> */}
                 <FormGroup>
@@ -66,7 +65,6 @@ function ProductsFilters() {
                         />}
                     />
                 </FormGroup >
-            </div>
         </div >
     );
 }
