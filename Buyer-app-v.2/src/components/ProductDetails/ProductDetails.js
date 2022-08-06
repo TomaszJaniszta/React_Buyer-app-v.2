@@ -42,20 +42,23 @@ function ProductDetails() {
 
     return (
         <div className={commonColumnsStyles.AppDetails} tabIndex={1} onKeyDown={handleKeyDown} ref={ref} autoFocus >
-            <div className={commonColumnsStyles.Arrow} onClick={() => navigate(-1)}><ArrowBackIcon fontSize="large" /> Backspace </div>
             <h4>Product Details</h4>
-            {statusProductDetails === "loading" ? (
-                <CircularProgress />
-            ) : (
-                <>
-                    <div className={commonColumnsStyles.details}>
-                        <span> Item id: {productDetails.id} </span>
-                        <span> Item name: {productDetails.name} </span>
-                        <span> Item category: {productDetails.category} </span>
-                        <span> Item is food: {new Boolean(productDetails.isFood).toString()} </span>
-                    </div>
-                </>
-            )}
+            <div className={commonColumnsStyles.Arrow} onClick={() => navigate(-1)}><ArrowBackIcon fontSize="large" /> Backspace </div>
+            <br />
+            {
+                statusProductDetails === "loading" ? (
+                    <CircularProgress />
+                ) : (
+                    <>
+                        <div className={commonColumnsStyles.details}>
+                            <span> Item id: <b>{productDetails.id} </b></span>
+                            <span> Item name: <b>{productDetails.name} </b></span>
+                            <span> Item category: <b>{productDetails.category} </b></span>
+                            <span> Item is food: <b>{new Boolean(productDetails.isFood).toString()} </b></span>
+                        </div>
+                    </>
+                )
+            }
         </div >
 
     );
