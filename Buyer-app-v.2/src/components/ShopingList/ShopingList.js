@@ -49,7 +49,10 @@ function ShopingList(props) {
 
     return (
         <div className={commonColumnsStyles.App}>
-            <h4>Shoping List</h4>
+            <h4>{!products ? `Shopping list: 0` :
+
+                `Shopping list: ${products.length}`}</h4>
+
             <p>Right click on item to remove.<br /> Left click to go to the item details.</p>
             <div className={commonColumnsStyles.ShoppingList}>
                 <Stack spacing={2}>

@@ -1,0 +1,97 @@
+@keyframes color {
+    from {
+        border-color: gray;
+    }
+
+    to {
+        border-color: red;
+    }
+}
+
+.headerWrapper {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(187, 245, 255));
+}
+
+.signedUserInfo {
+    display: flex;
+    align-items: center;
+    margin-right: 5vw;
+    justify-content: flex-end;
+
+    &>* {
+        margin-inline: 1vw;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    margin-right: 3vw;
+    justify-content: flex-end;
+
+    &>* {
+        margin-inline: 0.1vw;
+    }
+}
+
+.loader {
+    animation-name: color;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 6vw;
+    height: 4vh;
+    background-image: linear-gradient(white, grey);
+    border-style: 10px outset;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: gray;
+    font-size: 1.5vh;
+    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 6vw;
+    height: 4vh;
+    background-image: linear-gradient(white, grey);
+    border-style: 10px outset;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: gray;
+    font-size: 1.5vh;
+    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+}
+
+.buttons:hover {
+    color: red;
+    box-shadow: 0 0 15px 15px rgb(0, 0, 0) outset;
+    transform: scaleY(1.1);
+    transform: scaleX(1.1);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-inline: 2vw;
+    background-color: aqua;
+    width: 45vw;
+    height: 1vh;
+
+    &>* {
+        margin-inline: 5px;
+    }
+}

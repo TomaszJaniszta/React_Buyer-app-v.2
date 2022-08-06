@@ -4,12 +4,11 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
-import { Typography } from "@mui/material";
+// import { Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 
 function ProductsFilters() {
     const dispatch = useDispatch();
-    // let textInput = useRef(null);
     const [searchValue, setSearchValue] = useState('');
     const [isFoodCategory, setIsFoodCategory] = useState(false);
     const initialProducts = () => { dispatch({ type: "SET_INITIAL_FILTERED_PRODUCTS" }) };
@@ -38,39 +37,43 @@ function ProductsFilters() {
     };
 
     return (
-        <div className={styles.filtersHeaderWrapper}>
-            <div className={styles.filtersHeaderWrapper1}>
+        <div className={styles.FiltersHeaderWrapper}>
+            <div className={styles.FilterName}>
                 <h4>Filter products:</h4>
                 {/* <Typography variant="h6"></Typography> */}
                 <FormGroup>
                     <FormControlLabel
                         control={
                             <TextField
+                                className={styles.Inputs}
                                 id="textInput"
                                 margin="dense"
                                 label="product name"
                                 variant="outlined"
                                 value={searchValue}
                                 onChange={onChangeSearchValue}
-                                className={styles.input}
                             />
                         }
                     />
                 </FormGroup >
-
-
-                <h4><i> Only food: </i></h4>
-                {/* <Typography variant="h6"></Typography> */}
+            </div>
+            <div className={styles.FilterFood}>
+                <h4> Only food: </h4>
+                {/* <Typography variant="h6">Only food:</Typography> */}
                 <FormGroup>
-                    <FormControlLabel
-                        control={<Checkbox
-                            value={isFoodCategory}
-                            onChange={onChangeIsFoodCategory}
-                        />}
-                    />
+                    <label className={styles.checkbox}>
+                        <FormControlLabel
+                            control={<Checkbox
+                                type="checkbox"
+                                id="checkbox"
+                                value={isFoodCategory}
+                                onChange={onChangeIsFoodCategory}
+                            />}
+                        />
+                    </label>
                 </FormGroup >
             </div>
-        </div >
+        </div>
     );
 }
 

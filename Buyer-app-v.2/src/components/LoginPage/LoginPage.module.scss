@@ -1,36 +1,34 @@
 :root {
-  --gray: #bdbcbc;
+  --gray: rgb(204, 204, 204);
+  --lightblue: rgb(169, 255, 255);
+  --white: rgb(255, 255, 255);
 }
 
 .loginPageWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: left;
   margin-left: auto;
   margin-right: auto;
   width: 15%;
   margin-top: 15%;
-  background-image: radial-gradient(rgb(170, 213, 255),
-      rgb(255, 255, 255),
-      rgb(170, 213, 255));
-  border-radius: 5%;
+  background-image: radial-gradient(var(--lightblue),
+      var(--white),
+      var(--lightblue));
+  border-radius: 15px;
   box-shadow: 10px 10px 10px 0px var(--gray);
 
-  & input[type='text'],
+  button {
+    border: 1px solid black;
+  }
+}
+
+.Inputs {
+
+  input[type='text'],
   textarea {
-    background-color: #ffffff;
-    box-shadow: 10px 10px 10px 0px var(--gray);
-  }
-
-  & label {
-    text-align: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    color: var(--gray);
-  }
-
-  & button {
-    box-shadow: 5px 5px 5px 0px var(--gray);
+    background-color: white;
+    border-radius: 5px;
   }
 }

@@ -1,48 +1,36 @@
-.headerWrapper {
-  height: 100px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  // justify-content: flex-end;
-  justify-content: center;
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(170, 213, 255));
-  margin-right: 20px;
-
-  & button {
-    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
-    border-radius: 10px;
-  }
-
-}
-
-.filtersHeaderWrapper1 {
-  display: flex;
-  margin-left: 5vw;
-  margin-right: 10vw;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-
 h4 {
-  margin-right: 15px;
+  margin-right: 1vw;
 }
 
-.filtersHeaderWrapper {
+.FiltersHeaderWrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 5vw;
   width: 100%;
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(170, 213, 255));
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(187, 245, 255));
+
 }
 
-.signedUserInfo {
+.FilterName {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-right: 24px;
+  justify-content: center;
+}
 
-  &>* {
-    margin-left: 16px;
+.FilterFood {
+  display: flex;
+  flex-direction: row;
+  padding-inline: 10vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.Inputs {
+
+  input[id="textInput"] {
+    background-color: white;
+    border-radius: 5px;
   }
 }

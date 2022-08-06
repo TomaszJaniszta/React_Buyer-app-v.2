@@ -23,18 +23,23 @@ function LoginPage() {
     <div className={styles.loginPageWrapper}>
       <form onSubmit={signInUser}>
         <Box sx={{ m: 1 }}>
-          <TextField
-            className={styles.inputs}
-            margin="dense"
-            id="outlined-basic"
-            label="First name"
-            variant="outlined"
-            value={userfirstName}
-            onChange={(event) => setUserFirstName(event.target.value)}
-          />
+          <div className={styles.Inputs}>
+            <TextField
+              className={styles.Inputs}
+              type="text"
+              margin="dense"
+              id="outlined-basic"
+              label="First name"
+              variant="outlined"
+              value={userfirstName}
+              onChange={(event) => setUserFirstName(event.target.value)}
+            />
+          </div>
         </Box>
         <Box sx={{ m: 1 }}>
           <TextField
+            className={styles.Inputs}
+            type="text"
             margin="dense"
             id="outlined-basic"
             label="Last name"
@@ -55,7 +60,7 @@ function LoginPage() {
           </Box>
         </div>
       </form>
-    </div>
+    </div >
   );
 }
 
