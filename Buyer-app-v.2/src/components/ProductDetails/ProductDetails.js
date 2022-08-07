@@ -1,5 +1,5 @@
 import { React, useEffect, useRef } from 'react';
-import commonColumnsStyles from "../../common/styles/Columns.module.scss";
+import commonColumnsStyles from "./ProductsDetails.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,15 +41,13 @@ function ProductDetails() {
     }, []);
 
     return (
-        <div className={commonColumnsStyles.AppDetails} tabIndex={1} onKeyDown={handleKeyDown} ref={ref} autoFocus >
-            <h4>Product Details</h4>
-            <div className={commonColumnsStyles.Arrow} onClick={() => navigate(-1)}><ArrowBackIcon fontSize="large" /> Backspace </div>
-            <br />
+        <div className={commonColumnsStyles.appDetails} tabIndex={1} onKeyDown={handleKeyDown} ref={ref} autoFocus >
             {
                 statusProductDetails === "loading" ? (
                     <CircularProgress />
                 ) : (
                     <>
+                        <h4> Product details </h4>
                         <div className={commonColumnsStyles.details}>
                             <span> Item id: <b>{productDetails.id} </b></span>
                             <span> Item name: <b>{productDetails.name} </b></span>
@@ -59,6 +57,8 @@ function ProductDetails() {
                     </>
                 )
             }
+            <br />
+            <div className={commonColumnsStyles.Arrow} onClick={() => navigate(-1)}><ArrowBackIcon fontSize="large" /> Backspace </div>
         </div >
 
     );

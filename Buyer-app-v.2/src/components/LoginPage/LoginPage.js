@@ -50,13 +50,14 @@ function LoginPage() {
         </Box>
         <div align="center">
           <Box sx={{ m: 1 }}>
-            <Button
+            {/* <Button
               disabled={!userfirstName || !userLastName}
               variant="contained"
               type="submit"
             >
               Log in
-            </Button>
+            </Button> */}
+            <button disabled={!userfirstName || !userLastName} >Log in</button>
           </Box>
         </div>
       </form>

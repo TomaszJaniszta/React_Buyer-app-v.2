@@ -10,6 +10,9 @@ import { store } from "./redux/store";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { Provider } from "react-redux";
 
+// import Ball1 from "./components/Ball1/Ball1";
+import Ball2 from "./components/Ball2/Ball2";
+
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
@@ -20,6 +23,12 @@ ReactDOM.render(
                 </Route>
                 <Route path="product" element={<App />}>
                     <Route path="productdetails/:id" element={<ProductDetails />} />
+                </Route>
+                {/* <Route path="ball1" element={<App />}>
+                    <Route path="ball_v1" element={<Ball1 />} />
+                </Route> */}
+                <Route path="ball2" element={<App />}>
+                    <Route path="ball_v2" element={<Ball2 />} />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -1,0 +1,51 @@
+h4 {
+    margin-right: 1vw;
+}
+
+.FiltersHeaderWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 5vw;
+    width: 100%;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(187, 245, 255));
+
+}
+
+.FilterName {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.FilterFood {
+    display: flex;
+    flex-direction: row;
+    padding-inline: 10vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#Inputs label {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 150%;
+    font-size: .85em;
+    color: red($color: #000000);
+    label: "product name";
+}
+
+.Inputs {
+    scale: 0.8;
+
+    input[id="textInput"] {
+        background-color: white;
+        border-radius: 5px;
+        // height: 1vh;
+        color: red($color: #000000);
+        align-items: flex-start;
+    }
+}

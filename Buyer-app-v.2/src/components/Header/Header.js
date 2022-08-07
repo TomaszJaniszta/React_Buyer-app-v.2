@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import { Typography, Button } from "@mui/material";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 function Header() {
@@ -37,12 +38,36 @@ function Header() {
         }
     };
 
+    const navigate = useNavigate();
+
+    const onClickMenu = (event) => {
+        console.log("selected menu " + event.target.value);
+        if (event.target.value === "Bouncing ball v.2") {
+            navigate(`../../ball2/ball_v2`);
+        };
+        if (event.target.value === "buyer_app") {
+            navigate(`../../products/dashboard`);
+        };
+    };
+
+    const ballMenu = ["Bouncing ball v.1", "Bouncing ball v.2"];
+
     return (
         <div>
             <div className={styles.headerWrapper}>
                 <div className={styles.menu}>
                     <p>Menu</p>
-                    <button>Select1</button>
+                    <label className={styles.selects}>
+                        <select onChange={onClickMenu} onClick={onClickMenu}>
+                            <option key={'default'} value={''}>Bouncing Ball scripts</option>
+                            {ballMenu.map((version) => (
+                                <option key={version} value={version}>
+                                    {version}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
+                    <button onClick={onClickMenu} value="buyer_app">Buyer application</button>
                     <button>Select2</button>
                     <button>Select3</button>
                     <button>Select4</button>

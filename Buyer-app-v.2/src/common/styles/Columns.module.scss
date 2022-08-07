@@ -1,4 +1,5 @@
 $--yellow: rgb(255, 238, 0);
+// background: var(--yellow);
 
 .App {
   display: flex;
@@ -16,59 +17,10 @@ $--yellow: rgb(255, 238, 0);
   box-shadow: 0 0 15px 5px rgb(255, 255, 255) inset;
 }
 
-.AppDetails {
-  display: flex;
-  flex-direction: column;
-  // text-align: center;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  background: rgb(86, 193, 255);
-  margin-top: 1%;
-  width: auto;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-bottom: 1%;
-  padding: 5vh;
-  border-radius: 15px;
-  box-shadow: 0 0 15px 5px rgb(255, 255, 255) inset;
-}
-
-.Arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  width: auto;
-  height: auto;
-  background-image: linear-gradient(white, grey);
-  border-radius: 15px;
-  border-style: outset;
-  border-color: grey;
-  padding: 5px;
-}
-
-.Arrow :hover {
-  cursor: pointer;
-  color: red;
-
-}
-
-.Arrow:active {
-  transform: scaleY(1.5);
-  transform: scaleX(1.5);
-}
-
 p {
   text-align: center;
   color: rgb(107, 0, 0);
   // margin-left: 5%;
-}
-
-ul {
-  list-style-type: decimal;
-  margin: 0;
-  padding: 0;
 }
 
 .ProductList {
@@ -111,14 +63,14 @@ ul {
   text-align: left;
   color: rgb(0, 0, 0);
   border: 1px solid black;
-  // background: var(--yellow);
+  background-image: linear-gradient(white 18%, rgb(182, 182, 182) 85%, grey);
   box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
 }
 
 .Products:focus {
   color: rgb(0, 0, 0);
   border: 1px solid black;
-  background: $--yellow;
+  background-image: linear-gradient(45deg, rgb(255, 173, 173), rgb(146, 146, 255));
   transition: linear 1s;
   transform: scaleY(1.2);
   transform: scaleX(1.2);
@@ -128,38 +80,18 @@ ul {
 .Products:hover {
   color: rgb(88, 0, 0);
   border: 1px solid black;
-  background: $--yellow;
+  background-image: linear-gradient(45deg, rgb(255, 173, 173), rgb(146, 146, 255));
   transition-timing-function: ease-in;
   transition: linear 1s;
   transform: scaleY(1.2);
   transform: scaleX(1.2);
+  left: 48vw;
   box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
   opacity: 0.7;
   cursor: pointer;
 }
 
 .Products:active {
-  // transition: linear 2s;
   transform: scaleY(-1.5);
   transform: scaleX(-1.5);
-  // transform: translateY(20px);
-}
-
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-
-.details {
-  padding: 2vw;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  box-shadow: 0 0 15px 10px rgb(255, 255, 255);
-  line-height: 2;
 }

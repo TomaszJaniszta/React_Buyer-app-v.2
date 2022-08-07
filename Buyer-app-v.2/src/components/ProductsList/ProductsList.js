@@ -61,6 +61,10 @@ function ProductsList() {
     setCurrentFocused(next);
   };
 
+  const productMenu = (id, event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={commonColumnsStyles.App} >
       <h4>{`Products list: ${products.length}`}</h4>
@@ -79,6 +83,7 @@ function ProductsList() {
                 // tabIndex={product.id}
                 tabIndex={1}
                 onClick={() => addToShopingList(product)}
+                onContextMenu={(event) => productMenu(product.id, event)}
                 onKeyDown={(e) => keypressHandler(e, product)}
               >
                 {`${product.id}. ${product.name}`}

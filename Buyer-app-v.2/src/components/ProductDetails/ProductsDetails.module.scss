@@ -1,0 +1,59 @@
+.appDetails {
+  display: flex;
+  flex-direction: column;
+  // text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  background: rgb(124, 207, 255);
+  margin-top: 1%;
+  width: auto;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  padding: 1vh;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 5px rgb(255, 255, 255) inset;
+}
+
+h4 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.details {
+  margin-top: 1vh;
+  padding: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 0 15px 5px rgb(255, 255, 255);
+  line-height: 2;
+  border: 1px solid gray;
+}
+
+.Arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(white, grey);
+  border-radius: 15px;
+  border-style: outset;
+  border-color: grey;
+  padding: 1vh;
+}
+
+.Arrow :hover {
+  cursor: pointer;
+  color: red;
+
+}
+
+.Arrow:active {
+  transform: scaleY(1.5);
+  transform: scaleX(1.5);
+}

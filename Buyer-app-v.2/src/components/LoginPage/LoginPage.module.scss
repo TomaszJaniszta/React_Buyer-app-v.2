@@ -20,7 +20,49 @@
   box-shadow: 10px 10px 10px 0px var(--gray);
 
   button {
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 6vw;
+    height: 4vh;
+    background-image: linear-gradient(white, grey);
+    border-style: 10px outset;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: gray;
+    font-size: 1.5vh;
+    box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+  }
+
+  button:hover {
+    color: rgb(0, 133, 18);
+    transform: scaleY(1.1);
+    transform: scaleX(1.1);
+  }
+
+  button:active {
+    color: rgb(0, 133, 18);
+    transform: scaleY(1.1);
+    transform: scaleX(1.2);
+  }
+
+  button:disabled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(182, 182, 182);
+    width: 6vw;
+    height: 4vh;
+    background-image: linear-gradient(white, rgb(218, 218, 218));
+    border-style: 10px outset;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: rgb(212, 212, 212);
+    font-size: 1.5vh;
+    box-shadow: none;
+    transform: scaleY(1.0);
+    transform: scaleX(1.0);
   }
 }
 
@@ -28,7 +70,7 @@
 
   input[type='text'],
   textarea {
-    background-color: white;
+    background-image: linear-gradient(45deg, white 20%, rgb(204, 204, 204) 60%, rgb(151, 150, 150) 95%);
     border-radius: 5px;
   }
 }
