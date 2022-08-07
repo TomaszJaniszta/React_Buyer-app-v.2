@@ -4,8 +4,16 @@ import { board } from '../../common/consts/ExamInput';
 import styles from './Ball2.module.scss';
 
 function Ball2() {
-  let buttonDisabled = false;
 
+  // componentDidMount() {
+  //   document.addEventListener("click", this.closeMenu);
+  // };
+
+  // componentWillUnmount() {
+  //   clearInterval(this.play);
+  // };
+
+  let buttonDisabled = false;
   let gameBoardUpdate = () => {
     return board.map((indexTable) => (
       <div>
@@ -80,7 +88,8 @@ function Ball2() {
       this.y += this.vector.y;
     }
   }
-  //move ball, board pole =
+
+  let play;
   class Game {
     constructor(ball, board) {
       this.ball = ball;
@@ -130,7 +139,7 @@ function Ball2() {
 
     start() {
       // interval
-      const play = setInterval(() => {
+      play = setInterval(() => {
         if (
           this.board[this.ball.y + this.ball.vector.y][
           this.ball.x + this.ball.vector.x
@@ -152,31 +161,46 @@ function Ball2() {
           clearInterval(play);
           alert('Game done!');
           console.log('Game over');
-          // buttonDisabled = false;
           window.location.reload();
         }
       }, 1000);
     }
   }
 
+
+
   let startBall = new BallGenerator(board).generateBall();
   let myVector = new Vector(1, 1);
   let movingBall = new Ball(startBall.y, startBall.x, myVector);
 
   function gameStart() {
-    console.log(document.getElementById('ball').className);
+    buttonDisabled = !buttonDisabled;
+    document.getElementById("myBtn1").disabled = buttonDisabled;
+    document.getElementById("myBtn2").disabled = !buttonDisabled;
     let game = new Game(movingBall, board).start();
-    buttonDisabled = true;
+    console.log(window.location);
   }
-
-  // entry.target.classList.add('show'); // Add a class.
+  function gameStop() {
+    buttonDisabled = !buttonDisabled;
+    clearInterval(play);
+    window.location.reload();
+  };
 
   return (
     <>
-      <div className={styles.Backgroud}>
+      <div className={styles.ball2}>
+        <div>
+          <p><b>Ball bouncy simulator v.2.</b><br /><br />The program is to show how the object would travel and bounce against the walls.<br />
+            "?" blocks change the direction of the ball to random. The program is to end when object comes back to original position.<br />
+            Ball v.2 version based on Webdings font. Still in development...</p>
+          {/* <p id="time">{`Time: ${time}`}</p> */}
+        </div>
         <div className={styles.button}>
-          <button id="myBtn" disabled={buttonDisabled} onClick={gameStart}>
+          <button id="myBtn1" disabled={buttonDisabled} onClick={gameStart}>
             {' Start! '}
+          </button>
+          <button id="myBtn2" disabled={!buttonDisabled} onClick={gameStop}>
+            {' Stop! '}
           </button>
         </div>
         <div className={styles.board}>{gameBoardDisplay}</div>

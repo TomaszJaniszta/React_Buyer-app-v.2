@@ -41,7 +41,6 @@ function Header() {
     const navigate = useNavigate();
 
     const onClickMenu = (event) => {
-        console.log("selected menu " + event.target.value);
         if (event.target.value === "Bouncing ball v.2") {
             navigate(`../../ball2/ball_v2`);
         };
@@ -56,10 +55,10 @@ function Header() {
         <div>
             <div className={styles.headerWrapper}>
                 <div className={styles.menu}>
-                    <p>Menu</p>
+                    <h4>Menu</h4>
                     <label className={styles.selects}>
-                        <select onChange={onClickMenu} onClick={onClickMenu}>
-                            <option key={'default'} value={''}>Bouncing Ball scripts</option>
+                        <select id="select" onChange={onClickMenu} onClick={onClickMenu}>
+                            <option key={'default'} value={''}>Balls</option>
                             {ballMenu.map((version) => (
                                 <option key={version} value={version}>
                                     {version}
