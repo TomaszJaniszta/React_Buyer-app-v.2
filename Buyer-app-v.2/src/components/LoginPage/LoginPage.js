@@ -20,48 +20,50 @@ function LoginPage() {
     navigate("/products/dashboard");
   };
   return (
-    <div className={styles.loginPageWrapper}>
-      <form onSubmit={signInUser}>
-        <Box sx={{ m: 1 }}>
-          <div className={styles.Inputs}>
+    <div className={styles.body}>
+      <div className={styles.loginPageWrapper}>
+        <form onSubmit={signInUser}>
+          <Box sx={{ m: 1 }}>
+            <div className={styles.Inputs}>
+              <TextField
+                className={styles.Inputs}
+                type="text"
+                margin="dense"
+                id="outlined-basic"
+                label="First name"
+                variant="outlined"
+                value={userfirstName}
+                onChange={(event) => setUserFirstName(event.target.value)}
+              />
+            </div>
+          </Box>
+          <Box sx={{ m: 1 }}>
             <TextField
               className={styles.Inputs}
               type="text"
               margin="dense"
               id="outlined-basic"
-              label="First name"
+              label="Last name"
               variant="outlined"
-              value={userfirstName}
-              onChange={(event) => setUserFirstName(event.target.value)}
+              value={userLastName}
+              onChange={(event) => setUserLastName(event.target.value)}
             />
-          </div>
-        </Box>
-        <Box sx={{ m: 1 }}>
-          <TextField
-            className={styles.Inputs}
-            type="text"
-            margin="dense"
-            id="outlined-basic"
-            label="Last name"
-            variant="outlined"
-            value={userLastName}
-            onChange={(event) => setUserLastName(event.target.value)}
-          />
-        </Box>
-        <div align="center">
-          <Box sx={{ m: 1 }}>
-            {/* <Button
+          </Box>
+          <div align="center">
+            <Box sx={{ m: 1 }}>
+              {/* <Button
               disabled={!userfirstName || !userLastName}
               variant="contained"
               type="submit"
             >
               Log in
             </Button> */}
-            <button disabled={!userfirstName || !userLastName} >Log in</button>
-          </Box>
-        </div>
-      </form>
-    </div >
+              <button disabled={!userfirstName || !userLastName} >Log in</button>
+            </Box>
+          </div>
+        </form>
+      </div >
+    </div>
   );
 }
 

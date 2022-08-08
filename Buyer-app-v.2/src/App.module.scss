@@ -1,9 +1,12 @@
 .appWrapper {
   display: flex;
   flex-direction: column;
+  background-image: radial-gradient(white, gray);
+  align-self: auto;
 }
 
 .columnsWrapper {
+  align-items: flex-start;
   display: flex;
   height: 100%;
 }

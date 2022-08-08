@@ -78,10 +78,10 @@ function Header() {
                             {` ${currentUser.userfirstName} ${currentUser.userLastName}`}
                         </Typography>
                     </div>
-                    <div className={styles.button} >
-                        <button id="loader" className={styles.loader} onClick={setInitialValues} >Load products</button>
+                    <div className={styles.buttons} >
+                        <button id="loader" onClick={setInitialValues} >Load products</button>
                         <Link to="/">
-                            <button id="logger" className={styles.buttons}>Log off </button>
+                            <button id="logger" >Log off </button>
                         </Link>
                     </div>
                 </div>

@@ -4,6 +4,14 @@
   --white: rgb(255, 255, 255);
 }
 
+.body {
+  display: flex;
+  align-items: flex-start;
+  background-image: radial-gradient(white, black);
+  height: 100vh;
+  width: 100vw;
+}
+
 .loginPageWrapper {
   display: flex;
   align-items: center;
@@ -12,7 +20,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 15%;
-  margin-top: 15%;
+  margin-top: 20%;
   background-image: radial-gradient(var(--lightblue),
       var(--white),
       var(--lightblue));
