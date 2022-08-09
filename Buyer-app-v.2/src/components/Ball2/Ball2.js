@@ -1,17 +1,8 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { board } from '../../common/consts/ExamInput';
 import styles from './Ball2.module.scss';
 
 function Ball2() {
-
-  // componentDidMount() {
-  //   document.addEventListener("click", this.closeMenu);
-  // };
-
-  // componentWillUnmount() {
-  //   clearInterval(this.play);
-  // };
 
   let buttonDisabled = false;
   let gameBoardUpdate = () => {
@@ -90,6 +81,8 @@ function Ball2() {
   }
 
   let play;
+  let game;
+  let start = 0;
   class Game {
     constructor(ball, board) {
       this.ball = ball;
@@ -161,30 +154,44 @@ function Ball2() {
           clearInterval(play);
           alert('Game done!');
           console.log('Game over');
-          window.location.reload();
         }
       }, 1000);
     }
   }
 
-
-
   let startBall = new BallGenerator(board).generateBall();
   let myVector = new Vector(1, 1);
   let movingBall = new Ball(startBall.y, startBall.x, myVector);
 
-  function gameStart() {
-    buttonDisabled = !buttonDisabled;
-    document.getElementById("myBtn1").disabled = buttonDisabled;
-    document.getElementById("myBtn2").disabled = !buttonDisabled;
-    let game = new Game(movingBall, board).start();
-    console.log(window.location);
-  }
-  function gameStop() {
-    buttonDisabled = !buttonDisabled;
-    clearInterval(play);
+  const gameReset = () => {
     window.location.reload();
   };
+
+  const handleButtonDown = (event) => {
+    console.log('Button pressed');
+    if (start < 1) {
+      game = new Game(movingBall, board).start();
+      start += 1;
+      console.log(start);
+    } else {
+      clearInterval(play);
+      start -= 1;
+      console.log(start);
+      clearInterval(play);
+      // window.location.reload();
+    }
+  };
+
+  React.useEffect(() => {
+    // window.addEventListener('keydown', handleKeyDown);
+    const element = document.getElementById('myBtn');
+    element.addEventListener('click', handleButtonDown);
+    // cleanup this component
+    return () => {
+      clearInterval(play);
+      element.removeEventListener('click', handleButtonDown);
+    };
+  }, []);
 
   return (
     <>
@@ -196,11 +203,19 @@ function Ball2() {
           {/* <p id="time">{`Time: ${time}`}</p> */}
         </div>
         <div className={styles.button}>
-          <button id="myBtn1" disabled={buttonDisabled} onClick={gameStart}>
-            {' Start! '}
+          <button
+            type="button"
+            id="myBtn"
+          >
+            {' Start / Stop '}
           </button>
-          <button id="myBtn2" disabled={!buttonDisabled} onClick={gameStop}>
-            {' Stop! '}
+          <button
+            type="button"
+            id="resetBtn"
+            // disabled={start === 1 ? true : false}
+            onClick={gameReset}
+          >
+            {' Reset '}
           </button>
         </div>
         <div className={styles.board}>{gameBoardDisplay}</div>

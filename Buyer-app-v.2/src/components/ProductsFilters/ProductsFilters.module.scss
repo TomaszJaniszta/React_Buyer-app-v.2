@@ -1,8 +1,16 @@
+@keyframes color {
+    from {
+        border-color: gray;
+    }
+
+    to {
+        border-color: red;
+    }
+}
+
 h4 {
     margin-right: 1vw;
 }
-
-
 
 .FiltersHeaderWrapper {
     display: flex;
@@ -30,6 +38,14 @@ h4 {
         border-color: gray;
         font-size: 1.5vh;
         box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
+    }
+
+
+    button[id="loader"] {
+        animation-name: color;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
     }
 
     button:hover {

@@ -6,6 +6,7 @@ import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
 // import { Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
+import axios from 'axios';
 
 function ProductsFilters() {
     const dispatch = useDispatch();
@@ -14,6 +15,33 @@ function ProductsFilters() {
     const initialProducts = () => { dispatch({ type: "SET_INITIAL_FILTERED_PRODUCTS" }) };
     const filteredByValue = () => { dispatch({ type: "SET_FILTERED_PRODUCTS_BY_VALUE", value: searchValue }) };
     const filteredByFood = () => { dispatch({ type: "SET_FILTERED_PRODUCTS_FOOD", value: isFoodCategory }) };
+
+    const setInitialValues = async () => {
+        try {
+            dispatch({ type: "SET_SHOPING_LIST_STATE", value: "loading" });
+            dispatch({ type: "SET_PRODUCT_LIST_STATE", value: "initial" });
+            const response = await axios.get(`http://localhost:9000/products`);
+            dispatch({ type: "SET_INITIAL_PRODUCTS_LIST", value: response.data });
+            dispatch({ type: "SET_PRODUCT_LIST_STATE", value: "success" });
+            dispatch({ type: "SET_INITIAL_FILTERED_PRODUCTS" });
+            setInitialValuesShoppingList();
+            document.getElementById("loader").id = "normalBtn";
+        } catch (e) {
+            dispatch({ type: "SET_SHOPING_LIST_STATE", value: "error" });
+            console.log("ERROR", e)
+        }
+    };
+
+    const setInitialValuesShoppingList = async () => {
+        try {
+            const response = await axios.get(`http://localhost:9000/products/shopingList`);
+            dispatch({ type: "SET_SHOPING_LIST", value: response.data });
+            dispatch({ type: "SET_SHOPING_LIST_STATE", value: "success" });
+        } catch (e) {
+            dispatch({ type: "SET_SHOPING_LIST_STATE", value: "error" });
+            console.log("ERROR", e)
+        }
+    };
 
     useEffect(() => {
         initialProducts();
@@ -35,8 +63,6 @@ function ProductsFilters() {
     const onChangeIsFoodCategory = (event) => {
         setIsFoodCategory(!isFoodCategory);
     };
-
-    const setInitialValues = () => { };
 
     return (
 
