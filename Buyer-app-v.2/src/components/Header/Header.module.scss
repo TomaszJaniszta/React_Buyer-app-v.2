@@ -5,6 +5,9 @@
     height: 10vh;
     width: 100%;
     background-image: linear-gradient(rgb(255, 255, 255), rgb(187, 245, 255));
+    font-size: 1.3vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .signedUserInfo {
@@ -45,7 +48,7 @@
     // button[id="logger"] {  }
 
     button:hover {
-        color: rgb(0, 47, 255);
+        font-weight: bold;
         box-shadow: 0 0 15px 15px rgb(0, 0, 0) outset;
         transform: scale(0.9);
         background-image: linear-gradient(rgb(192, 192, 192), rgb(0, 217, 255));
@@ -54,69 +57,142 @@
     button:active {
         transform: scale(1.3);
     }
+
+    //     &>* {
+    //         margin-inline: 0px;
+    //     }
 }
 
+// menu -------------------------------------------------------
 .menu {
+    // on top
+    position: relative;
+    z-index: 10;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     margin-left: 3vw;
     margin-right: 3vw;
-    background-image: linear-gradient(white, grey);
-    width: 75%;
-    height: 33%;
-    // padding-left: 1vw;
-    // box-shadow: 0px 0px 15px 15px rgb(255, 255, 255) inset;
-    box-shadow: 0px 0px 5px 3px rgb(255, 255, 255);
+    // background-image: linear-gradient(white, rgb(187, 187, 187), white);
+    background-color: rgb(182, 232, 255);
+    width: 80%;
+    height: 20%;
+
+    box-shadow: 0px 0px 3px 3px rgb(129, 215, 255);
     border-color: black;
-    border-radius: 15px;
+    border-radius: 10px;
+    border-style: 10px outset;
 
     h4 {
         margin-inline: 1vw;
         // margin: auto;
     }
 
-    select[id="select"],
-    textarea {
-        border-color: black;
-        border-style: 10px outset;
-        background-color: rgb(184, 184, 184);
+    ol {
+        margin-left: 5%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+
+
+        a {
+            // whole menu
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
     }
 
-    select,
-    button {
-        color: black;
-        width: 7vw;
-        height: 4vh;
-        background-image: linear-gradient(white, grey);
-        border-style: 10px outset;
-        border-radius: 15px;
-        border-width: 5px;
-        border-color: gray;
-        font-size: 1.3vh;
-        box-shadow: 5px 5px 5px 0px rgb(114, 114, 114);
-        // margin-right: 1vw;
+    ol>li {
+        //menu header
+        float: left;
+        // background-color: #fdd700;
+        background-image: linear-gradient(white, rgb(0, 195, 255));
+        width: 150px;
+        margin-left: 2px;
+        border-radius: 10px;
+        border: 5px outset rgb(155, 155, 155);
+        box-shadow: 5px 5px 5px 0px grey;
     }
 
-    button:hover {
-        color: rgb(0, 47, 255);
-        box-shadow: 0 0 15px 15px rgb(0, 0, 0) outset;
-        transform: scale(0.9);
+    ol>li:hover {
+        //menu header
+        // background-color: rgb(158, 190, 255);
+        // background-image: linear-gradient(white, rgb(43, 172, 174), white);
         background-image: linear-gradient(rgb(192, 192, 192), rgb(0, 217, 255));
     }
 
-    select:hover {
-        color: rgb(0, 47, 255);
-        box-shadow: 0 0 15px 15px rgb(0, 0, 0) outset;
-        transform: scale(0.9);
-        background-image: linear-gradient(rgb(192, 192, 192), rgb(0, 217, 255));
+    ol>li:hover>a {
+        //menu header, hover, whole field
+        color: rgb(0, 0, 0);
+        font-weight: bold;
     }
 
-    button:active {
+    // ol>li>a:hover {
+    //     //menu header, hover, link only
+    //     color: rgb(255, 255, 255);
+    // }
+
+    ol>li>ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ol>li:first-child {
+        margin-left: 0;
+    }
+
+    // ol > li > ul > li > a {
+    ol>li>ul>li {
+        //lists
+        border: 5px outset rgb(155, 155, 155);
+        // border-top-width: 100%;
+        //----
+        border-radius: 10px;
+        background-image: linear-gradient(white, rgb(184, 184, 184), white);
+        // background-color: rgb(221, 255, 0);
+        box-shadow: 5px 5px 5px 0px grey;
+    }
+
+    ol>li>ul>li:hover a {
+        //lists - font color
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+
+    ol>li>ul>li:hover {
+        //lists
+        background-image: linear-gradient(white, rgb(150, 255, 245), white);
+        // background-color: rgb(154, 231, 255);
+    }
+
+    ol>li>ul>li:active {
+        background-image: radial-gradient(white 50%, rgb(251, 255, 1));
         transform: scale(1.3);
     }
 
-    &>* {
-        margin-inline: 0px;
+    ol>li>ul {
+        display: none;
+    }
+
+    ol>li:hover>ul {
+        display: block;
+    }
+
+    // keep on place
+    ol>li {
+        float: left;
+        background-color: #fdd700;
+        width: 150px;
+        margin-left: 1px;
+        height: 2em;
     }
 }
+
+//----------------------

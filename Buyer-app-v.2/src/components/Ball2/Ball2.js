@@ -4,7 +4,10 @@ import styles from './Ball2.module.scss';
 
 function Ball2() {
 
-  let buttonDisabled = false;
+  let play;
+  let start = 0;
+  let started = false;
+
   let gameBoardUpdate = () => {
     return board.map((indexTable) => (
       <div>
@@ -12,19 +15,19 @@ function Ball2() {
           if (element === 'X') {
             return <div className={styles.Wall}>C</div>; // g, C
           } else if (element === '1') {
-            if (buttonDisabled === false) {
-              return (
-                <div id="ball" className={styles.Ball}>
-                  y
-                </div>
-              );
-            } else {
-              return (
-                <div id="ballRunning" className={styles.BallRunning}>
-                  y
-                </div>
-              );
-            }
+            // if (started === false) {
+            return (
+              <div id="ball" className={started ? styles.BallRunning : styles.Ball}>
+                y
+              </div>
+            );
+            // } else {
+            //   return (
+            //     <div id="ballRunning" className={styles.BallRunning}>
+            //       y
+            //     </div>
+            //   );
+            // }
           } else if (element === '0') {
             return <div className={styles.Air}>c</div>;
           } else if (element === 'Y') {
@@ -36,6 +39,7 @@ function Ball2() {
   };
 
   let [gameBoardDisplay, setGameBoardDisplay] = useState(gameBoardUpdate());
+  let [time, setTime] = useState(0);
 
   class BallGenerator {
     constructor(board) {
@@ -80,9 +84,6 @@ function Ball2() {
     }
   }
 
-  let play;
-  let game;
-  let start = 0;
   class Game {
     constructor(ball, board) {
       this.ball = ball;
@@ -148,12 +149,13 @@ function Ball2() {
         } else {
           this.moveBall();
         }
-
+        setTime(time += 1);
         setGameBoardDisplay(gameBoardUpdate());
         if (this.ball.x === this.startingX && this.ball.y === this.startingY) {
           clearInterval(play);
           alert('Game done!');
           console.log('Game over');
+          window.location.reload();
         }
       }, 1000);
     }
@@ -162,6 +164,7 @@ function Ball2() {
   let startBall = new BallGenerator(board).generateBall();
   let myVector = new Vector(1, 1);
   let movingBall = new Ball(startBall.y, startBall.x, myVector);
+  let game = new Game(movingBall, board);
 
   const gameReset = () => {
     window.location.reload();
@@ -170,22 +173,25 @@ function Ball2() {
   const handleButtonDown = (event) => {
     console.log('Button pressed');
     if (start < 1) {
-      game = new Game(movingBall, board).start();
+      game.start();
       start += 1;
-      console.log(start);
+      started = !started;
+      element.innerHTML === "Start" ? element.innerHTML = "Stop" : element.innerHTML = "Start";
     } else {
-      clearInterval(play);
       start -= 1;
-      console.log(start);
+      started = !started;
+      element.innerHTML === "Start" ? element.innerHTML = "Stop" : element.innerHTML = "Start";
       clearInterval(play);
-      // window.location.reload();
     }
   };
 
+  let element;
+
   React.useEffect(() => {
     // window.addEventListener('keydown', handleKeyDown);
-    const element = document.getElementById('myBtn');
+    element = document.getElementById('myBtn');
     element.addEventListener('click', handleButtonDown);
+
     // cleanup this component
     return () => {
       clearInterval(play);
@@ -199,26 +205,27 @@ function Ball2() {
         <div>
           <p><b>Ball bouncy simulator v.2.</b><br /><br />The program is to show how the object would travel and bounce against the walls.<br />
             "?" blocks change the direction of the ball to random. The program is to end when object comes back to original position.<br />
-            Ball v.2 version based on Webdings font. Still in development...</p>
+            Ball v.2 version based on Webdings font.</p>
           {/* <p id="time">{`Time: ${time}`}</p> */}
         </div>
-        <div className={styles.button}>
+        <br />
+        <div className={styles.board}>{gameBoardDisplay}</div>
+        <div>
           <button
             type="button"
             id="myBtn"
           >
-            {' Start / Stop '}
+            Start
           </button>
           <button
             type="button"
             id="resetBtn"
-            // disabled={start === 1 ? true : false}
             onClick={gameReset}
           >
-            {' Reset '}
+            Reset
           </button>
         </div>
-        <div className={styles.board}>{gameBoardDisplay}</div>
+        <div className={styles.time}><p>{'Time: '}<b>{time}</b></p></div>
       </div>
     </>
   );
