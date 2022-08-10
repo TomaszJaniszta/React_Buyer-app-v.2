@@ -12,6 +12,9 @@ import { Provider } from "react-redux";
 
 // import Ball1 from "./components/Ball1/Ball1";
 import Ball2 from "./components/Ball2/Ball2";
+import Main from "./components/Main/Main";
+import Chess from "./components/Chess/Chess";
+import Gol from "./components/Gol/Gol";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -29,6 +32,15 @@ ReactDOM.render(
                 </Route> */}
                 <Route path="ball2" element={<App />}>
                     <Route path="ball_v2" element={<Ball2 />} />
+                </Route>
+                <Route path="main" element={<App />}>
+                    <Route path="main" element={<Main />} />
+                </Route>
+                <Route path="chess" element={<App />}>
+                    <Route path="chess" element={<Chess />} />
+                </Route>
+                <Route path="gol" element={<App />}>
+                    <Route path="gol" element={<Gol />} />
                 </Route>
             </Routes>
         </BrowserRouter>

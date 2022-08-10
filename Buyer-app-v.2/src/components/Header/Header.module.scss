@@ -100,7 +100,6 @@
         line-height: 2em;
         text-align: center;
 
-
         a {
             // whole menu
             text-decoration: none;
@@ -133,10 +132,10 @@
         font-weight: bold;
     }
 
-    // ol>li>a:hover {
-    //     //menu header, hover, link only
-    //     color: rgb(255, 255, 255);
-    // }
+    ol>li>a:hover {
+        //     //menu header, hover, link only
+        color: rgb(255, 255, 255);
+    }
 
     ol>li>ul {
         list-style-type: none;

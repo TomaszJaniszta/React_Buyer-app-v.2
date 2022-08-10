@@ -19,7 +19,7 @@ function Header() {
                 <div>
                     <ol>
                         <li>
-                            <a href="#">Main page</a>
+                            <a href="../../main/main">Main page</a>
                         </li>
                         <li>
                             <a>Buyer apps</a>
@@ -44,22 +44,13 @@ function Header() {
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Chess app</a>
-                        </li>
-                        <li>
-                            <a>Other</a>
+                            <a>Other apps</a>
                             <ul>
                                 <li>
-                                    <a href="#">link - 1</a>
+                                    <a href="../../chess/chess">Chess</a>
                                 </li>
                                 <li>
-                                    <a href="#">link - 2</a>
-                                </li>
-                                <li>
-                                    <a href="#">link - 3</a>
-                                </li>
-                                <li>
-                                    <a href="#">link - 4</a>
+                                    <a href="../../gol/gol">Game of life</a>
                                 </li>
                             </ul>
                         </li>
