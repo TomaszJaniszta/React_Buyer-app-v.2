@@ -189,6 +189,13 @@ function Chess() {
         gameStart() {
             chess = new ChessOnBoardGenerator(board).generateChess();
             console.log(chess);
+            // add information on site
+            let tag = document.createElement("p");
+            let text = document.createTextNode(chess.figureType + " appear on x=" + chess.x + ", y=" + chess.y);
+            tag.appendChild(text);
+            let element = document.getElementById("result");
+            element.appendChild(tag);
+
             // checking whole board for figures and their moves, if figure can be beaten than sending the result
             let checkBoardForExistingPawn = (x, y, board, pawnArray) => {
                 let status = false;
@@ -214,9 +221,16 @@ function Chess() {
                         if (mate !== true) {
                             board[j][k] = 'X';
                         } else {
-                            alert("Checkmate!");
-                            alert(`The ${board[x][y]} on ${x}, ${y} beating ${board[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`);
-                            document.getElementById("myBtn").disabled = true;
+                            // alert(`Checkmate!. The ${board[x][y]} on ${x}, ${y} beating ${board[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`);
+                            document.getElementById('myBtnChess').remove();
+
+                            let tag = document.createElement("p");
+                            let text = document.createTextNode(`Checkmate! The ${board[x][y]} on ${x}, ${y} beating ${board[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`);
+                            tag.appendChild(text);
+                            let element = document.getElementById("result");
+                            element.appendChild(tag);
+
+                            // document.getElementById("result").innerHTML = `Checkmate! The ${board[x][y]} on ${x}, ${y} beating ${board[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`;
                         };
                     };
                 };
@@ -251,12 +265,27 @@ function Chess() {
         setGameBoardDisplay(gameBoardUpdate());
     };
 
+    let gameReset = () => {
+        window.location.reload();
+    };
+
     return (
         <>
-            <div className={styles.board}>
-                <button id="myBtn" onClick={gameStart}> Add figure </button>
-                <div><br></br></div>
-                {gameBoardDisplay}
+            <div className={styles.columnsWrapper}>
+                <div className={styles.board}>
+                    {gameBoardDisplay}
+                </div>
+                <div className={styles.content}>
+                    <h1>Chess <span>(Chess simple)</span></h1>
+                    <p>Program is to choose at random one of the chess piece (except the pawn) and place it at the random spot on the board.<br />
+                        After placing any piece (except first one) check all present pieces move ranges and see if any can reach other piece.<br />
+                        If so Give that pieces position and quit program. FACTORY (with class hierarhy) + SINGLETON pattern.</p>
+                    <br />
+                    <button id="myBtnChess" onClick={gameStart} className={styles.button}> Add figure </button><button id="myBtnReset" onClick={gameReset} className={styles.button}> Reset game </button>
+                    <br />
+                    <br />
+                    <div id="result"></div>
+                </div>
             </div>
         </>
     )

@@ -1,5 +1,5 @@
 {
-  "name": "lab2",
+  "name": "service-react-tomasz-janiszta",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,9 +51,9 @@
     "cypress": "^9.7.0",
     "prettier": "2.6.2"
   },
-  "description": "Maksymalna ilość punktów: 5",
+  "description": "Service for presentation",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "Tomasz Janiszta",
   "license": "ISC"
 }

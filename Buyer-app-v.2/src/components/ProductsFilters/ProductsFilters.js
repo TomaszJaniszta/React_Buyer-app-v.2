@@ -65,48 +65,50 @@ function ProductsFilters() {
     };
 
     return (
-
-        <div className={styles.FiltersHeaderWrapper}>
-            <div className={styles.buttons}>
-                <button id="loader" className={styles.buttons} onClick={setInitialValues} >Load products</button>
-            </div>
-            <div className={styles.FilterName}>
-                <h4>Filter products:</h4>
-                {/* <Typography variant="h6"></Typography> */}
-                <FormGroup>
-                    <FormControlLabel
-                        control={
-                            <TextField
-                                className={styles.Inputs}
-                                id="textInput"
-                                margin="dense"
-                                label="product name"
-                                variant="outlined"
-                                value={searchValue}
-                                onChange={onChangeSearchValue}
-                            />
-                        }
-                    />
-                </FormGroup >
-            </div>
-
-            <div className={styles.FilterFood}>
-                <h4> Only food: </h4>
-                {/* <Typography variant="h6">Only food:</Typography> */}
-                <FormGroup>
-                    <label className={styles.checkbox}>
+        <>
+            <p>Works only with runing attached server. Products from remote resource + Redux</p>
+            <div className={styles.FiltersHeaderWrapper}>
+                <div className={styles.buttons}>
+                    <button id="loader" className={styles.buttons} onClick={setInitialValues} >Load products</button>
+                </div>
+                <div className={styles.FilterName}>
+                    <h4>Filter products:</h4>
+                    {/* <Typography variant="h6"></Typography> */}
+                    <FormGroup>
                         <FormControlLabel
-                            control={<Checkbox
-                                type="checkbox"
-                                id="checkbox"
-                                value={isFoodCategory}
-                                onChange={onChangeIsFoodCategory}
-                            />}
+                            control={
+                                <TextField
+                                    className={styles.Inputs}
+                                    id="textInput"
+                                    margin="dense"
+                                    label="product name"
+                                    variant="outlined"
+                                    value={searchValue}
+                                    onChange={onChangeSearchValue}
+                                />
+                            }
                         />
-                    </label>
-                </FormGroup >
-            </div>
-        </div >
+                    </FormGroup >
+                </div>
+
+                <div className={styles.FilterFood}>
+                    <h4> Only food: </h4>
+                    {/* <Typography variant="h6">Only food:</Typography> */}
+                    <FormGroup>
+                        <label className={styles.checkbox}>
+                            <FormControlLabel
+                                control={<Checkbox
+                                    type="checkbox"
+                                    id="checkbox"
+                                    value={isFoodCategory}
+                                    onChange={onChangeIsFoodCategory}
+                                />}
+                            />
+                        </label>
+                    </FormGroup >
+                </div>
+            </div >
+        </>
     );
 }
 
