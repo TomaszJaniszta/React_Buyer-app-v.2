@@ -123,7 +123,7 @@
         //menu header
         // background-color: rgb(158, 190, 255);
         // background-image: linear-gradient(white, rgb(43, 172, 174), white);
-        background-image: linear-gradient(rgb(192, 192, 192), rgb(0, 217, 255));
+        background-image: linear-gradient(rgb(255, 255, 255), rgb(0, 217, 255));
     }
 
     ol>li:hover>a {
@@ -134,7 +134,7 @@
 
     ol>li>a:hover {
         //     //menu header, hover, link only
-        color: rgb(255, 255, 255);
+        color: rgb(0, 38, 255);
     }
 
     ol>li>ul {
@@ -167,7 +167,7 @@
 
     ol>li>ul>li:hover {
         //lists
-        background-image: linear-gradient(white, rgb(150, 255, 245), white);
+        background-image: linear-gradient(white, rgb(52, 181, 255), white);
         // background-color: rgb(154, 231, 255);
     }
 

@@ -191,7 +191,13 @@ function Chess() {
             console.log(chess);
             // add information on site
             let tag = document.createElement("p");
-            let text = document.createTextNode(chess.figureType + " appear on x=" + chess.x + ", y=" + chess.y);
+            let text = document.createTextNode(
+                `${chess.figureType == 'K' ? 'King' :
+                    chess.figureType == 'Q' ? 'Queen' :
+                        chess.figureType == 'L' ? 'Laufer' :
+                            chess.figureType == 'H' ? 'Horse' :
+                                'Tower'
+                } appear on x=${chess.x}, y=${chess.y}`);
             tag.appendChild(text);
             let element = document.getElementById("result");
             element.appendChild(tag);
@@ -225,7 +231,20 @@ function Chess() {
                             document.getElementById('myBtnChess').remove();
 
                             let tag = document.createElement("p");
-                            let text = document.createTextNode(`Checkmate! The ${board[x][y]} on ${x}, ${y} beating ${board[x + moves[i][0]][y + moves[i][1]]} on ${x + moves[i][0]}, ${y + moves[i][1]}`);
+                            let text = document.createTextNode(`Checkmate! The 
+                                ${board[x][y] == 'K' ? 'King' :
+                                    board[x][y] == 'Q' ? 'Queen' :
+                                        board[x][y] == 'L' ? 'Laufer' :
+                                            board[x][y] == 'H' ? 'Horse' :
+                                                'Tower'
+                                }
+                                on ${x}, ${y} beating 
+                                ${board[x + moves[i][0]][y + moves[i][1]] == 'K' ? 'King' :
+                                    board[x + moves[i][0]][y + moves[i][1]] == 'Q' ? 'Queen' :
+                                        board[x + moves[i][0]][y + moves[i][1]] == 'L' ? 'Laufer' :
+                                            board[x + moves[i][0]][y + moves[i][1]] == 'H' ? 'Horse' :
+                                                'Tower'
+                                } on x=${x + moves[i][0]}, y=${y + moves[i][1]}`);
                             tag.appendChild(text);
                             let element = document.getElementById("result");
                             element.appendChild(tag);
